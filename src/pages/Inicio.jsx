@@ -19,7 +19,7 @@ const Inicio = () => {
               nombre={pizza.name}
               ingredientes={pizza.ingredients}
               precio={pizza.price}
-              imagen={pizza.image}
+              imagen={pizza.img}
               descripcion={pizza.desc}
             />
           ))}
