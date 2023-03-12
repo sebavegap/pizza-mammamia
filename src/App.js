@@ -2,12 +2,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import de react-router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import de componentes de bootstrap
+import { Container } from "react-bootstrap";
 
 //import de componentes
 import Navigation from "./components/Navigation";
 
 //import de componentes de las pages
-import Home from "./pages/Home";
+import Inicio from "./pages/Inicio";
 import Detalle from "./pages/Detalle";
 import Carrito from "./pages/Carrito";
 
@@ -37,14 +39,15 @@ function App() {
     <div className="App">
       
       <Navigation />
-      <Home />
+      <div className='contenedor-principal'>
     
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Inicio />} />
         <Route path="/pizza/:id" element={<Detalle />} />
         <Route path="/carrito" element={<Carrito />} />
       </Routes>
-      
+
+      </div>
     </div>
     </BrowserRouter>
     </MyContext.Provider>
