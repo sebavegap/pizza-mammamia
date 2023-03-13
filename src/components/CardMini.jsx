@@ -6,10 +6,16 @@ import { Card, Col, Container } from 'react-bootstrap'
 //import de hooks
 import { useContext } from 'react'
 import MyContext from '../Context'
+import { useNavigate } from 'react-router-dom'
 
 const CardMini = (pizza) => {
 
+const navigate = useNavigate()
 
+//función para navegar al detalle de la pizza
+const irAPizza = (e) => {
+    navigate(`/pizza/${e.target.value}`)
+}
 
     return (
         <div>
@@ -33,7 +39,8 @@ const CardMini = (pizza) => {
                                     <li>{pizza.ingredientes[3]}</li>
                                 </ul>
 
-
+{/* boton ver mas */}
+                                <button className="btn btn-primary" value={pizza.id} onClick={irAPizza}>Ver más</button>
 
                                 <br />
                                 {/*   formateo de figura.precio a moneda chilena con Intl.NumberFormat */}
