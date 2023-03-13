@@ -27,14 +27,15 @@ const CardDetalle = () => {
             {/* parse del nombre para añadir mayuscula */}
             {pizzaDetalle.name.charAt(0).toUpperCase() + pizzaDetalle.name.slice(1)}
           </Card.Title>
-          <Card.Text>
-            <ul>
+          <ul>
               <li>{pizzaDetalle.ingredients[0]}</li>
               <li>{pizzaDetalle.ingredients[1]}</li>
               <li>{pizzaDetalle.ingredients[2]}</li>
               <li>{pizzaDetalle.ingredients[3]}</li>
             </ul>
             <br />
+          <Card.Text>
+       
             {/*   formateo de figura.precio a moneda chilena con Intl.NumberFormat */}
             Precio:{" "}
 

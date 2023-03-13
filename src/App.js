@@ -28,13 +28,12 @@ function App() {
 
 //proveemos el contexto con un estado inicial que consume los datos de pizzas
   const [datosPizzas, setdatosPizzas] = useState(pizzas);
-  console.log(datosPizzas);
   //Creamos otro estado global que usaremos para guardar el nuevo arreglo con las pizzas para el carrito
-  const [datoscarrito, setdatosCarrito] = useState([]);
+  const [datosCarrito, setdatosCarrito] = useState([]);
 
 
   return (
-    <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datoscarrito, setdatosCarrito }}>
+    <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datosCarrito, setdatosCarrito }}>
       <BrowserRouter>
     <div className="App">
       

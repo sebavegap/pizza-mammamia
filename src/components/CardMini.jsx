@@ -10,12 +10,22 @@ import { useNavigate } from 'react-router-dom'
 
 const CardMini = (pizza) => {
 
-const navigate = useNavigate()
+    const navigate = useNavigate()
+    //consumimos el contexto
+    const { datosCarrito, setdatosCarrito, datosPizzas } = useContext(MyContext)
 
-//función para navegar al detalle de la pizza
-const irAPizza = (e) => {
-    navigate(`/pizza/${e.target.value}`)
-}
+    //función para navegar al detalle de la pizza
+    const irAPizza = (e) => {
+        navigate(`/pizza/${e.target.value}`)
+    }
+
+    //función para agregar la pizza seleccionada al estadoglobal datosCarrito según la key
+    const agregarCarrito = (e) => {
+        
+        const pizzaSeleccionada = datosPizzas.find((pizza) => pizza.id === e.target.value)
+        setdatosCarrito([...datosCarrito, pizzaSeleccionada])
+        console.log(pizzaSeleccionada)
+    }
 
     return (
         <div>
@@ -31,16 +41,19 @@ const irAPizza = (e) => {
                                 {/* parse del nombre para añadir mayuscula */}
                                 {pizza.nombre.charAt(0).toUpperCase() + pizza.nombre.slice(1)}
                             </Card.Title>
-                            <Card.Text>
-                                <ul>
+                            <ul>
                                     <li>{pizza.ingredientes[0]}</li>
                                     <li>{pizza.ingredientes[1]}</li>
                                     <li>{pizza.ingredientes[2]}</li>
                                     <li>{pizza.ingredientes[3]}</li>
                                 </ul>
+                            <Card.Text>
+                             
 
-{/* boton ver mas */}
+                                {/* boton ver mas */}
                                 <button className="btn btn-primary" value={pizza.id} onClick={irAPizza}>Ver más</button>
+                                {/* boton para agregar la pizza seleccionada al estadoglobal datosCarrito según la key*/}
+                                <button className="btn btn-primary" value={pizza.id} onClick={agregarCarrito}>Agregar al carrito</button>
 
                                 <br />
                                 {/*   formateo de figura.precio a moneda chilena con Intl.NumberFormat */}
