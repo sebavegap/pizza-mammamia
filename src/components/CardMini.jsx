@@ -56,10 +56,11 @@ else {
         <div>
             {/* se mapea el array de pizzas.js desde el estado y se genera una card por cada elemento */}
             <Col xl={3} md={4} s={6} xs={6} className="p-1">
-                <Container className="py-2 h-100">
+                <Container className="py-2 h-100 w-auto">
                     {/* se mapea el array de inventario.js desde el estado y se genera una card por cada elemento */}
 
-                    <Card style={{ width: "auto" }} className='mb-3 h-100' key={pizza.id}>
+<Col>
+                    <Card className='mb-3 h-100 w-auto' key={pizza.id}>
                         <Card.Img variant="top" style={{ height: "300px" }} src={pizza.imagen} />
                         <Card.Body>
                             <Card.Title>
@@ -93,7 +94,7 @@ else {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-
+                    </Col>
                 </Container>
             </Col>
 

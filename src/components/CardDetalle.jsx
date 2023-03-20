@@ -1,7 +1,7 @@
 import React from 'react'
 import MyContext from '../Context'
 //imnport de componentes de bootstrap
-import { Card } from 'react-bootstrap'
+import { Card, Container } from 'react-bootstrap'
 
 //import de hooks
 import { useParams } from 'react-router-dom'
@@ -17,12 +17,15 @@ const CardDetalle = () => {
   const pizzaDetalle = datosPizzas.find((pizza) => pizza.id === id)
 
   return (
-    <div><h1>
-      CardDetalle
-    </h1>
+    <div>
+      <Container fluid className='px-4 py-3 d-flex flex-wrap justify-content-center'>
+        <h1>Detalle de la pizza</h1>
+      </Container>
+    <Container style={{width: 'auto'}} className='d-flex flex-wrap justify-content-center'>
+    
     {/* card de bootstrap con los datos de la pizza encontrada */}
       <Card style={{ width: "auto" }} className='mb-3 h-100' key={pizzaDetalle.id}>
-        <Card.Img variant="top" style={{ height: "300px" }} src={pizzaDetalle.img} />
+        <Card.Img variant="top" className='w-100 h-auto' src={pizzaDetalle.img} />
         <Card.Body>
           <Card.Title>
             {/* parse del nombre para añadir mayuscula */}
@@ -49,7 +52,7 @@ const CardDetalle = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-
+</Container>
 
     </div>
   )

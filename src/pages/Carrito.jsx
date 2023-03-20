@@ -6,6 +6,9 @@ import MyContext from '../Context'
 //import de hooks
 import { useContext } from 'react'
 
+//imports de react-bootstrap
+import { Container, Row, Col } from 'react-bootstrap'
+
 
 const Carrito = () => {
 
@@ -14,8 +17,15 @@ const Carrito = () => {
   console.log(datosCarrito)
   return (
     <div>
+      <Container fluid className='px-4 py-3'>
+        {/* center row */}
+      <Row>
       <h1>Carrito</h1>
+      </Row>
+      <Row>
         <ListaProductos />
+        </Row>
+      </Container>
         
     </div>
   )
