@@ -39,7 +39,7 @@ function App() {
     <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datosCarrito, setdatosCarrito, precioTotal, setprecioTotal }}>
       <BrowserRouter>
     <div className="App">
-      
+     
       <Navigation />
       <div className='contenedor-principal'>
     {/* rutas de navegación con las pasginas y sus componentes en "pages" */}
