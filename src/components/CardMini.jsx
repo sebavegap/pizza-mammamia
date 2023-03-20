@@ -12,14 +12,15 @@ const CardMini = (pizza) => {
 
     const navigate = useNavigate()
     //consumimos el contexto
-    const { datosCarrito, setdatosCarrito, datosPizzas } = useContext(MyContext)
+    const { datosCarrito, setdatosCarrito, datosPizzas, precioTotal, setprecioTotal } = useContext(MyContext)
 
     //función para navegar al detalle de la pizza
     const irAPizza = (e) => {
         navigate(`/pizza/${e.target.value}`)
     }
 
-    //función para agregar la pizza seleccionada al estadoglobal datosCarrito según la key
+
+    //función para agregar la pizza seleccionada al estadoglobal datosCarrito según la key del objeto
     const agregarCarrito = (e) => {
         
         const pizzaSeleccionada = datosPizzas.find((pizza) => pizza.id === e.target.value)

@@ -40,8 +40,15 @@ else {
         {/* sumamos los precios de los productos en el carrito */}
         {/* .reduce es como map, llama a cada elemento del array, pasando el valor de la operación del elemento anterior */}
         {/* En este caso a acc se le suma la operación de precios y cantidades. El valor inicial es 0. */}
-        Total: {datosCarrito.reduce((acc, producto) => acc + producto.price * producto.quantity, 0)
+        Total de la compra: {
+            /* seteamos el precioTotal */
+            setprecioTotal(datosCarrito.reduce((acc, producto) => {
+              return acc + (producto.price * producto.quantity)
+            }
+              , 0))
+              /* mostramos el precioTotal */
         }
+        {precioTotal}
 
       </li>
     </ul>
