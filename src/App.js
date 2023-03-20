@@ -30,10 +30,12 @@ function App() {
   const [datosPizzas, setdatosPizzas] = useState(pizzas);
   //Creamos otro estado global que usaremos para guardar el nuevo arreglo con las pizzas para el carrito
   const [datosCarrito, setdatosCarrito] = useState([]);
+  //creamos un contexto para guardar el estado del precio total de productos en el carrito
+  const [precioTotal, setprecioTotal] = useState(0);
 
 
   return (
-    <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datosCarrito, setdatosCarrito }}>
+    <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datosCarrito, setdatosCarrito, precioTotal, setprecioTotal }}>
       <BrowserRouter>
     <div className="App">
       

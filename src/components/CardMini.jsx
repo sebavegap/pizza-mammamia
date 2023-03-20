@@ -23,7 +23,21 @@ const CardMini = (pizza) => {
     const agregarCarrito = (e) => {
         
         const pizzaSeleccionada = datosPizzas.find((pizza) => pizza.id === e.target.value)
-        setdatosCarrito([...datosCarrito, pizzaSeleccionada])
+//si la pizza ya está en el carrito con el mismo id, se le suma 1 al quantity
+        if (datosCarrito.find((pizza) => pizza.id === pizzaSeleccionada.id)) {
+            const newCarrito = datosCarrito.map((pizza) => {
+                if (pizza.id === pizzaSeleccionada.id) {
+                    return { ...pizza, quantity: pizza.quantity + 1 }
+                }
+                return pizza
+            })
+            setdatosCarrito(newCarrito)
+            return
+        }
+
+
+        //se setea el estado con el nuevo array, se agrega "quantity" y se suma 1
+        setdatosCarrito([...datosCarrito, { ...pizzaSeleccionada, quantity: 1 }])
         console.log(pizzaSeleccionada)
     }
 
