@@ -35,13 +35,14 @@ function App() {
 
 
   return (
+    /* Estamos usando provider para enviar los estados globales y sus setters a los diversos componentes */
     <MyContext.Provider value={{ datosPizzas, setdatosPizzas, datosCarrito, setdatosCarrito, precioTotal, setprecioTotal }}>
       <BrowserRouter>
     <div className="App">
       
       <Navigation />
       <div className='contenedor-principal'>
-    
+    {/* rutas de navegación con las pasginas y sus componentes en "pages" */}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/pizza/:id" element={<Detalle />} />

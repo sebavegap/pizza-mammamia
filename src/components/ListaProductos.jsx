@@ -11,7 +11,6 @@ const ListaProductos = () => {
   //consumimos el contexto
   const { datosCarrito, setdatosCarrito, precioTotal, setprecioTotal } = useContext(MyContext)
 
-  //función para sumar los precios de los productos en el carrito
 
 
 
@@ -24,12 +23,14 @@ if (datosCarrito.length === 0) {
   )
 }
 
+//Si hay productos en el carrito, mostrar la lista
 else {
   return (
     <div>
     <div>ListaProductos</div>
     {/* retornamos una lista con los productos en datosCarrito  */}
     <ul>
+      {/* Se hace un mapeo de las pizzas que han sido agregadas al carrito */}
       {datosCarrito.map((producto) => (
 
         <li key={producto.id}>
@@ -37,8 +38,8 @@ else {
         </li>
       ))}
       <li>
-        Total de la compra: 
-        {precioTotal}
+        {/* Aqui usamos precioTotal, que es calculado en la barra Navigation */}
+        Total de la compra: ${precioTotal}
 
       </li>
     </ul>

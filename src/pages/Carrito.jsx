@@ -10,6 +10,7 @@ import { useContext } from 'react'
 const Carrito = () => {
 
   const { datosCarrito, setdatosCarrito } = useContext(MyContext)
+  /* un log para asegurarnos que estemos guardando las pizzas en el estado global de carrito */
   console.log(datosCarrito)
   return (
     <div>

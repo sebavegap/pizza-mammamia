@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
 
 const CardDetalle = () => {
+  //usamos el parametro de la URL para encontrar el id de la pizza y desplegar
   const { id } = useParams()
 //consumimos el contexto
   const { datosPizzas } = useContext(MyContext)

@@ -5,11 +5,15 @@ import { Card, Col, Container } from 'react-bootstrap'
 
 //import de hooks
 import { useContext } from 'react'
-import MyContext from '../Context'
 import { useNavigate } from 'react-router-dom'
+
+//import del contexto
+import MyContext from '../Context'
+
 
 const CardMini = (pizza) => {
 
+    //creamos la variable navigate para usarla mas adelante
     const navigate = useNavigate()
     //consumimos el contexto
     const { datosCarrito, setdatosCarrito, datosPizzas, precioTotal, setprecioTotal } = useContext(MyContext)
@@ -20,27 +24,33 @@ const CardMini = (pizza) => {
     }
 
 
-    //función para agregar la pizza seleccionada al estadoglobal datosCarrito según la key del objeto
+    //función para agregar la pizza seleccionada al estado global datosCarrito según la key del objeto
     const agregarCarrito = (e) => {
         
+        //buscamos el objeto segun el id comparandolo con el valor del boton
         const pizzaSeleccionada = datosPizzas.find((pizza) => pizza.id === e.target.value)
 //si la pizza ya está en el carrito con el mismo id, se le suma 1 al quantity
         if (datosCarrito.find((pizza) => pizza.id === pizzaSeleccionada.id)) {
+            //creamos la variable newCarrito para guardar el nuevo array al que le incluiremos el quantity
             const newCarrito = datosCarrito.map((pizza) => {
+                //si el id de la pizza es igual al id de la pizza seleccionada, se le suma 1 al quantity
                 if (pizza.id === pizzaSeleccionada.id) {
                     return { ...pizza, quantity: pizza.quantity + 1 }
                 }
                 return pizza
             })
+            //se setea el estado con el nuevo array
             setdatosCarrito(newCarrito)
-            return
+            
         }
 
-
+else {
         //se setea el estado con el nuevo array, se agrega "quantity" y se suma 1
         setdatosCarrito([...datosCarrito, { ...pizzaSeleccionada, quantity: 1 }])
         console.log(pizzaSeleccionada)
+    
     }
+}
 
     return (
         <div>

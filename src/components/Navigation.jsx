@@ -25,7 +25,7 @@ const Navigation = () => {
       <div>
           <Navbar className='navigation p-3 fixed-top'>
         {/* con el componente NavLink y isActive, podemos cambiar atributos dependiendo de si
-        no encontramos en esa página o no */}
+        nos encontramos dentro de esa página o no */}
           <NavLink className={ setActiveClass } to='/'>
               Pizza Mamma-Mia!
               </NavLink>

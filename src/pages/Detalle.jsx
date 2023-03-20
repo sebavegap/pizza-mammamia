@@ -6,7 +6,7 @@ import CardDetalle from '../components/CardDetalle'
 const Detalle = () => {
   return (
     <div>
-        Detalles de pizza
+        Detalles de la pizza
 <CardDetalle />
     </div>
   )

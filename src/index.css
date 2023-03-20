@@ -36,7 +36,7 @@ li {
   padding-left: 1em;
   text-indent: -1em;
 }
-
+/* esto hará que los circulos de las listas sean un emoji de pizza */
 li:before {
   content: "🍕";
   padding-right: 5px;
