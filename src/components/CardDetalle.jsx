@@ -62,6 +62,7 @@ const agregarCarrito = (e) => {
               {pizzaDetalle.name.charAt(0).toUpperCase() + pizzaDetalle.name.slice(1)}
             </Card.Title>
             <ul>
+              {/* mostramos los datos segun su posición en el array */}
               <li>{pizzaDetalle.ingredients[0]}</li>
               <li>{pizzaDetalle.ingredients[1]}</li>
               <li>{pizzaDetalle.ingredients[2]}</li>

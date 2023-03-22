@@ -88,7 +88,7 @@ const ListaProductos = () => {
               </ListGroupItem>
             ))}
             <ListGroupItem>
-              {/* Aqui usamos precioTotal, que es calculado en la barra Navigation */}
+              {/* Aqui usamos precioTotal, el que es calculado en la barra Navigation */}
               <h3>Total de la compra: ${precioTotal}</h3>
 
             </ListGroupItem>

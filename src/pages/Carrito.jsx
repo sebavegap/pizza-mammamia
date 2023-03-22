@@ -18,7 +18,6 @@ const Carrito = () => {
   return (
     <div>
       <Container fluid className='px-4 py-3'>
-        {/* center row */}
         <Row>
           <h1>Carrito</h1>
         </Row>
