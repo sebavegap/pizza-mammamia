@@ -19,14 +19,14 @@ const Carrito = () => {
     <div>
       <Container fluid className='px-4 py-3'>
         {/* center row */}
-      <Row>
-      <h1>Carrito</h1>
-      </Row>
-      <Row>
-        <ListaProductos />
+        <Row>
+          <h1>Carrito</h1>
+        </Row>
+        <Row>
+          <ListaProductos />
         </Row>
       </Container>
-        
+
     </div>
   )
 }

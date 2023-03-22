@@ -6,8 +6,8 @@ import CardDetalle from '../components/CardDetalle'
 const Detalle = () => {
   return (
     <div>
-      
-<CardDetalle />
+
+      <CardDetalle />
     </div>
   )
 }

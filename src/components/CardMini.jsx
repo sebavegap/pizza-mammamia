@@ -26,10 +26,10 @@ const CardMini = (pizza) => {
 
     //función para agregar la pizza seleccionada al estado global datosCarrito según la key del objeto
     const agregarCarrito = (e) => {
-        
+
         //buscamos el objeto segun el id comparandolo con el valor del boton
         const pizzaSeleccionada = datosPizzas.find((pizza) => pizza.id === e.target.value)
-//si la pizza ya está en el carrito con el mismo id, se le suma 1 al quantity
+        //si la pizza ya está en el carrito con el mismo id, se le suma 1 al quantity
         if (datosCarrito.find((pizza) => pizza.id === pizzaSeleccionada.id)) {
             //creamos la variable newCarrito para guardar el nuevo array al que le incluiremos el quantity
             const newCarrito = datosCarrito.map((pizza) => {
@@ -41,16 +41,16 @@ const CardMini = (pizza) => {
             })
             //se setea el estado con el nuevo array
             setdatosCarrito(newCarrito)
-            
+
         }
 
-else {
-        //se setea el estado con el nuevo array, se agrega "quantity" y se suma 1
-        setdatosCarrito([...datosCarrito, { ...pizzaSeleccionada, quantity: 1 }])
-        console.log(pizzaSeleccionada)
-    
+        else {
+            //se setea el estado con el nuevo array, se agrega "quantity" y se suma 1
+            setdatosCarrito([...datosCarrito, { ...pizzaSeleccionada, quantity: 1 }])
+            console.log(pizzaSeleccionada)
+
+        }
     }
-}
 
     return (
         <div>
@@ -59,41 +59,41 @@ else {
                 <Container className="py-2 h-100 w-auto">
                     {/* se mapea el array de inventario.js desde el estado y se genera una card por cada elemento */}
 
-<Col>
-                    <Card className='mb-3 h-100 w-auto' key={pizza.id}>
-                        <Card.Img variant="top" style={{ height: "300px" }} src={pizza.imagen} />
-                        <Card.Body>
-                            <Card.Title>
-                                {/* parse del nombre para añadir mayuscula */}
-                                {pizza.nombre.charAt(0).toUpperCase() + pizza.nombre.slice(1)}
-                            </Card.Title>
-                            <ul>
+                    <Col>
+                        <Card className='mb-3 h-100 w-auto' key={pizza.id}>
+                            <Card.Img variant="top" style={{ height: "300px" }} src={pizza.imagen} />
+                            <Card.Body>
+                                <Card.Title>
+                                    {/* parse del nombre para añadir mayuscula */}
+                                    {pizza.nombre.charAt(0).toUpperCase() + pizza.nombre.slice(1)}
+                                </Card.Title>
+                                <ul>
                                     <li>{pizza.ingredientes[0]}</li>
                                     <li>{pizza.ingredientes[1]}</li>
                                     <li>{pizza.ingredientes[2]}</li>
                                     <li>{pizza.ingredientes[3]}</li>
                                 </ul>
-                            <Card.Text>
-                             
+                                <Card.Text>
 
-                                {/* boton ver mas */}
-                                <button className="btn btn-primary" value={pizza.id} onClick={irAPizza}>Ver más</button>
-                                {/* boton para agregar la pizza seleccionada al estadoglobal datosCarrito según la key*/}
-                                <button className="btn btn-primary" value={pizza.id} onClick={agregarCarrito}>Agregar al carrito</button>
 
-                                <br />
-                                {/*   formateo de figura.precio a moneda chilena con Intl.NumberFormat */}
-                                Precio:{" "}
-                                {new Intl.NumberFormat("es-CL", {
-                                    style: "currency",
-                                    currency: "CLP"
-                                })
-                                    .format(pizza.precio
-                                    )}
+                                    {/* boton ver mas */}
+                                    <button className="btn btn-primary" value={pizza.id} onClick={irAPizza}>Ver más</button>
+                                    {/* boton para agregar la pizza seleccionada al estadoglobal datosCarrito según la key*/}
+                                    <button className="btn btn-primary" value={pizza.id} onClick={agregarCarrito}>Agregar al carrito</button>
 
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                                    <br />
+                                    {/*   formateo de figura.precio a moneda chilena con Intl.NumberFormat */}
+                                    Precio:{" "}
+                                    {new Intl.NumberFormat("es-CL", {
+                                        style: "currency",
+                                        currency: "CLP"
+                                    })
+                                        .format(pizza.precio
+                                        )}
+
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
                     </Col>
                 </Container>
             </Col>

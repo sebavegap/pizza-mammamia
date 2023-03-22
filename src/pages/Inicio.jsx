@@ -13,7 +13,7 @@ const Inicio = () => {
   return (
     <div>
       <Container fluid>
-       <Row>
+        <Row>
           {/* se mapea el array de pizzas.js desde el estado y se genera una card por cada elemento */}
           {inventarioPizzas.map((pizza) => (
             <CardMini
@@ -27,7 +27,7 @@ const Inicio = () => {
             />
           ))}
         </Row>
-          </Container>
+      </Container>
     </div>
   )
 }
